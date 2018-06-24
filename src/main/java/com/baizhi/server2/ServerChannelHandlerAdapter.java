@@ -1,8 +1,7 @@
 package com.baizhi.server2;
 
-import com.baizhi.bean.End;
-import com.baizhi.local.MethodInvokeMeta;
-import com.baizhi.local.Result;
+import com.baizhi.bean.MethodInvokeMeta;
+import com.baizhi.bean.Result;
 import com.baizhi.service.DemoService;
 import com.baizhi.service.DemoServiceImpl;
 import io.netty.channel.ChannelFuture;

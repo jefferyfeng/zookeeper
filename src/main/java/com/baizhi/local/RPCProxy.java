@@ -1,5 +1,8 @@
 package com.baizhi.local;
 
+import com.baizhi.bean.HostAndPort;
+import com.baizhi.bean.MethodInvokeMeta;
+import com.baizhi.bean.Result;
 import org.I0Itec.zkclient.ZkClient;
 
 import java.lang.reflect.InvocationHandler;

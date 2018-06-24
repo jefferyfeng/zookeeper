@@ -1,6 +1,6 @@
 package com.baizhi.api_test;
 
-import com.baizhi.local.MethodInvokeMeta;
+import com.baizhi.bean.MethodInvokeMeta;
 import com.baizhi.service.DemoService;
 
 public class TestPrintf {

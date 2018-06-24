@@ -1,4 +1,4 @@
-package com.baizhi.local;
+package com.baizhi.bean;
 
 import java.io.Serializable;
 

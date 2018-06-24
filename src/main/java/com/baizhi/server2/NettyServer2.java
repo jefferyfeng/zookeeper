@@ -1,6 +1,6 @@
 package com.baizhi.server2;
 
-import com.baizhi.local.HostAndPort;
+import com.baizhi.bean.HostAndPort;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
