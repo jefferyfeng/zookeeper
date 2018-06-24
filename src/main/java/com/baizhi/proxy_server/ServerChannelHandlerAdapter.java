@@ -23,6 +23,9 @@ public class ServerChannelHandlerAdapter extends ChannelHandlerAdapter {
         ChannelFuture channelFuture = null;
         if(msg instanceof End){
             channelFuture = ctx.writeAndFlush(msg);
+
+            channelFuture.addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
+            channelFuture.addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
             //关闭通道
             channelFuture.addListener(ChannelFutureListener.CLOSE);
         }else {

@@ -30,8 +30,9 @@ public class ClientChannelHandlerAdapter extends ChannelHandlerAdapter {
          * 可以通过ChannelFuture来获取I/O操作的结果状态。
          */
 
-        ctx.writeAndFlush(getMethodInnvokeMeta());
-        ctx.writeAndFlush(getMethodInnvokeMeta());
+        ctx.writeAndFlush(getMethodInnvokeMeta(2,3));
+        ctx.writeAndFlush(getMethodInnvokeMeta(3,4));
+
         ChannelFuture channelFuture = ctx.writeAndFlush(new End());
         //捕获异常
         channelFuture.addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
@@ -53,12 +54,12 @@ public class ClientChannelHandlerAdapter extends ChannelHandlerAdapter {
      * 封装请求
      * @return
      */
-    private static MethodInvokeMeta getMethodInnvokeMeta(){
+    private static MethodInvokeMeta getMethodInnvokeMeta(Integer a,Integer b){
         MethodInvokeMeta request= new MethodInvokeMeta();
         request.setTargetInterfaces(DemoService.class);
         request.setMethod("sum");
         request.setParameterTypes(new Class[]{Integer.class,Integer.class});
-        request.setArgs(new Object[]{2,3});
+        request.setArgs(new Object[]{a,b});
 
         System.out.println("Send Request: ");
         System.out.printf("[%-13s]%s\n","interface"," => "+request.getTargetInterfaces());
